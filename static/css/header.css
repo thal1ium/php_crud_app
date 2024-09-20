@@ -1,0 +1,52 @@
+.header {
+
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  aspect-ratio: 16/9;
+  max-width: 100px;
+}
+
+.header__nav {}
+
+.nav {}
+
+.nav__list {
+  display: flex;
+  gap: 10px;
+}
+
+.nav__item {}
+
+.nav__link {
+  position: relative;
+  transition: color 0.3s ease-in;
+  padding: 5px 0 5px 0;
+}
+
+.nav__link:hover {
+  color: #444;
+}
+
+.nav__link::after {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background-color: #444;
+  transition: width 0.3s ease-in;
+}
+
+.nav__link:hover::after {
+  width: 100%;  
+}
