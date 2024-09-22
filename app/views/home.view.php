@@ -8,13 +8,17 @@
     <main class="main">
       <div class="main__container">
         <ul class="main__list list">
-         <?php foreach($res as $post) : ?>
-            <li class="list__item">
-              <h2 class="list__title"><?= htmlspecialchars($post['title']) ?></h2>
-              <img src="<?= $post['img_url']?>" alt="" class="list__img">
-              <p class="list__text"><?= htmlspecialchars($post['text'])?></p>
-            </li>
-          <?php endforeach ; ?>
+          <?php if($res) : ?>
+            <?php foreach($res as $post) : ?>
+              <li class="list__item">
+                <h2 class="list__title"><?= htmlspecialchars($post['title']) ?></h2>
+                <img src="<?= htmlspecialchars($post['img_url']) ?>" alt="" class="list__img">
+                <p class="list__text"><?= htmlspecialchars($post['text']) ?></p>
+              </li>
+            <?php endforeach ; ?>
+          <?php else : ?>
+            <h2>No content</h2>
+          <?php endif ; ?>
         </ul>
       </div>
     </main>
@@ -23,4 +27,5 @@
 
   </div>
 </body>
+
 </html>

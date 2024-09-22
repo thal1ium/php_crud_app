@@ -14,12 +14,25 @@ class HomeModel extends Database {
   
   public function query() 
   {
-    $statement = $this->connect()->prepare($this->query);
-    
-    $statement->execute();
+    try {
+      
+      $pdo = $this->connect();
 
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+      // перевірка на підключення
+      if ($pdo === null) {
+        throw new Exception("Connection failed.");
+      }
 
-    return $result;
+      $statement = $this->connect()->prepare($this->query);
+      $statement->execute();
+
+      $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+      return $result;
+
+    } catch (PDOException $e) {
+      error_log($e);
+      
+      return 0;
+    }
   }
 }
