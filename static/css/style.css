@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
 
 @import './base/null.css';
-@import 'header.css';
+@import './header.css';
 @import './main.css';
+@import './footer.css';
 
 body {
   font-family: "Montserrat", sans-serif;

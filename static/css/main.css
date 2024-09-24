@@ -1,6 +1,4 @@
-.main {
-
-}
+.main {}
 
 .main__container {}
 
@@ -29,6 +27,42 @@
   max-width: 400px;
 }
 
-.list__text {
-  
+.list__text {}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form__input {
+  padding: 10px;
+  border: 1px solid #444;
+}
+
+.form__button {
+  padding: 10px 40px;
+  align-self: self-start;
+  border: 1px solid #333;
+  border-radius: 20px;
+  transition: all 0.3s ease-in;
+}
+
+.form__button:hover {
+  background-color: #cfcfcf;
+}
+
+.form__wrapper {
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.textarea {
+  max-width: inherit;
 }
