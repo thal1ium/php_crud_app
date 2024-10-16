@@ -44,6 +44,7 @@
 .form__input {
   padding: 10px;
   border: 1px solid #444;
+  width: 100%;
 }
 
 .form__button {
@@ -64,5 +65,6 @@
 }
 
 .textarea {
-  max-width: inherit;
+  width: 100%;
+  resize: vertical;
 }

@@ -4,12 +4,14 @@ require 'app/core/Database.php';
 
 class HomeModel extends Database {
   private $query;
+  private $params;
   
-  public function __construct($host, $port, $name, $pass, $dbname, $query)
+  public function __construct($host, $port, $name, $pass, $dbname, $query, $params = [])
   {
     parent::__construct($host, $port, $name, $pass, $dbname);
 
     $this->query = $query; 
+    $this->params = $params;
   }
   
   public function query() 
@@ -24,7 +26,7 @@ class HomeModel extends Database {
       }
 
       $statement = $this->connect()->prepare($this->query);
-      $statement->execute();
+      $statement->execute($this->params);
 
       $result = $statement->fetchAll(PDO::FETCH_ASSOC);
       return $result;
